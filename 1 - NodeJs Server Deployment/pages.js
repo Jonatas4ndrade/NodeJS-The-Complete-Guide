@@ -56,7 +56,14 @@ const requestHandler = (req, res) => {
   // Oh boy, how I miss JSX...
   res.write('<html>');
   res.write('<head><title>WE\'RE ONLINE</title><head>');
-  res.write('<body><h1>' + GREETING + '</h1></body>');
+  res.write('<body>');
+  res.write('<h1>' + GREETING + '</h1>');
+  res.write('<body><h3> Users Registered:</h3></body>');
+  res.write('<ul><li>Admin</li>');
+  res.write('<li>Caesar Augustus</li>');
+  res.write('<li>Tiberius Claudius</li>');
+  res.write('<li>Marcus Aurelius</li></ul>');
+  res.write('</body>');
   res.write('</html>');
   res.end();
 };
