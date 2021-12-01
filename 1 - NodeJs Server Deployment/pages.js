@@ -17,9 +17,10 @@ const requestHandler = (req, res) => {
     // But let's stick to vanilla node for now
     res.write('<html>');
     res.write('<head><title>Register Username</title></head>');
-    res.write(
-      '<body><form action="/users" method="POST"><input type="text" name="newUser"><button type="submit">Send</button></form></body>'
-    );
+    res.write('<body>');
+      res.write('<h2>Register Username</h2>');
+      res.write('<form action="/users" method="POST"><input type="text" name="newUser" placeholder="Enter a new user here"><button type="submit">Send</button></form>');
+    res.write('</body>');
     res.write('</html>');
     return res.end();
   }
