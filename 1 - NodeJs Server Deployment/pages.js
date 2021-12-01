@@ -45,7 +45,7 @@ const requestHandler = (req, res) => {
         // Code 302 == redirection.
         res.statusCode = 302;
         // Redirects to root.
-        res.setHeader('Location', '/');
+        res.setHeader('Location', '/users');
         return res.end();
       });
     });
