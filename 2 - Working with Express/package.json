@@ -1,0 +1,11 @@
+{
+  "name": "2-working-with-express",
+  "version": "1.0.0",
+  "description": "Express exercise for Academind NodeJs - The Complete Guide ",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonatas Andrade\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[DS. Andrade",
+  "license": "ISC"
+}
