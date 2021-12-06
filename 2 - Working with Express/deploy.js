@@ -1,9 +1,12 @@
-//Imports HTTP module and routes file
+//Core Node
 const http = require('http');
-const pages = require('./pages');
 
-//Deploys server using handler function from "pages" file
-const mockServer = http.createServer(pages);
+//Third party
+const express = require('express');
 
-//Starts listener loop
-mockServer.listen(3500);
+/** IMPORTS ABOVE **/
+
+const app = express();
+
+//Deploys server on port 3500
+app.listen(3500);
