@@ -7,4 +7,4 @@ This repo was created to hold pratical exercises for the Udemy course:
 The course features 542 lectures and over 40hrs of video content.
 Hitherto, the didatic and content quality has been outstanding.
 
-<img src="./3 - Express Routing and Static Serving/ItsAlive!.png" width="100%" height="auto" style="display: block; margin: 0 auto">
+<img src="./3 - Express Routing and Static Serving/indexView!.png" width="100%" height="auto" style="display: block; margin: 0 auto">
