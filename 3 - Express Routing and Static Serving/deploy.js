@@ -3,10 +3,12 @@ const http = require('http');
 
 //Third party
 const express = require('express');
+
 const bodyParser = require('body-parser');  
+const path = require('path');
 
 //Resources
-const defaul = require('routes/default.js')
+const defaultRoute = require('./routes/default');
 
 /** IMPORTS ABOVE **/
 
@@ -15,9 +17,11 @@ const app = express();
 
 // Middlewares
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 /** ROUTES **/
-app.use(defaul);
+app.use(defaultRoute);
 
 //Deploys server non port 3500
 app.listen(3500);
