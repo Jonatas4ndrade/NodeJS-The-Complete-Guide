@@ -14,8 +14,12 @@ const defaultRoute = require('./routes/default');
 
 // Defines Express "object"
 const app = express();
-
+// Global Express settings
+app.set('view engine', 'pug');
+app.set('views', 'templates');
 // Middlewares
+
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
