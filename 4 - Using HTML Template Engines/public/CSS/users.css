@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:800,200);
+
+.title, #userlist {
+  top: -20vh;
+  padding-left: 1.5vw;
+  color:white;
+  transform: skewY(-5deg) translate(0, -2vw);
+}
+
+.title {
+  font-size:calc(1.3rem + 0.9vw);
+}
+
+#userlist {
+  font-family: 'Segoe UI', Tahoma;
+  font-size:calc(1rem + 0.7vw);
+  font-weight: 600;
+}
+

@@ -1,0 +1,26 @@
+extends layouts/common.pug
+
+block title
+    title Users Control Panel
+
+block styles 
+    link(rel="stylesheet", href="/css/moving-bg.css")
+    link(rel="stylesheet", href="/css/index.css")
+    link(rel="stylesheet", href="/css/users.css")
+
+block content
+    main 
+        .main-container
+            // Only renders if there are users registereds
+            if users.length > 0
+                .title
+                    h2 Registered Users:
+
+                #userlist
+                    ul
+                        //A single li for each username
+                        each username in users 
+                            li #{username}
+            else
+                h2.title NO USERS REGISTERED 8(
+    include layouts/moving-bg.pug
