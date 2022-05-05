@@ -1,28 +1,18 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Documents
-        link(rel="stylesheet", href="/css/index.css")
-        block Style
-    body
-        main
-            .form-container
-                form.newuser-form(action="/add-username" method="POST")
-                    div.form-control
-                        label(for="title") Register new user
-                        input(type="text", name="title", placeholder="Enter new UserName here.")#title
-                    button.btn(type="submit") Add User
+extends layouts/common.pug
 
-        .moving-bg
-            .bg-txt-container
-                .animate-text
-                    span UP AND RUNNING
-                .animate-text.left
-                    span RUNNING SMOOTHLY
-            .container
-                .col
-                    h1 Server is UP!
-            
+block title
+    title Users Control Panel
+
+block styles 
+    link(rel="stylesheet", href="/css/moving-bg.css")
+    link(rel="stylesheet", href="/css/common.css")
+block content
+    main
+        .main-container
+            form.newuser-form(action="/" method="POST")
+                .form-control
+                    label(for="user") Register new user
+                    input(type="text", name="user", placeholder="Enter new UserName here.")#user
+                button.btn(type="submit") Add User
+
+    include layouts/moving-bg.pug

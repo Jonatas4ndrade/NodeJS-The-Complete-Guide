@@ -8,12 +8,13 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 //Resources
-const defaultRoute = require('./routes/default');
+const defaultData = require('./routes/default');
 
 /** IMPORTS ABOVE **/
 
 // Defines Express "object"
 const app = express();
+
 // Global Express settings
 app.set('view engine', 'pug');
 app.set('views', 'templates');
@@ -25,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 /** ROUTES **/
-app.use(defaultRoute);
+app.use(defaultData.route);
 
 //Deploys server non port 3500
 app.listen(3500);
