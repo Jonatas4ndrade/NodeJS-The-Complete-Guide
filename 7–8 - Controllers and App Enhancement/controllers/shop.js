@@ -4,9 +4,9 @@ const Product = require('../models/product');
 // Check 'main-layout.pug' for more details.
  
 exports.addProductGet = (req, res, next) => {
-    res.render('add-product',
-    { pageTitle: 'Add Product', 
-      path: '/admin/add-product',
+    res.render('product-list',
+    { pageTitle: 'My Products', 
+      path: '/products',
       });
   };
 
