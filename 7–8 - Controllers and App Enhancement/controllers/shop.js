@@ -16,13 +16,24 @@ exports.addProductPost = (req, res, next) => {
   res.redirect('/');
   };
 
-exports.getProducts = (req, res, next) => {
+exports.homeGet = (req, res, next) => {
     Product.listProducts(productsList => 
       {
         res.render('shop/home', { 
            prods: productsList, 
-           pageTitle: 'Shop',
+           pageTitle: 'Home',
            path: '/'
+          });
+    });
+  };
+
+  exports.getProducts = (req, res, next) => {
+    Product.listProducts(productsList => 
+      {
+        res.render('shop/product-list', { 
+           prods: productsList, 
+           pageTitle: 'Shop',
+           path: '/products'
           });
     });
   };

@@ -4,14 +4,28 @@ const Product = require('../models/product');
 // Check 'main-layout.pug' for more details.
  
 exports.addProductGet = (req, res, next) => {
-    res.render('add-product',
+    res.render('admin/add-product',
     { pageTitle: 'Add Product', 
       path: '/admin/add-product',
       });
   };
 
 exports.addProductPost = (req, res, next) => {
-    const newProduct = new Product(req.body.title);
+    
+    const {pTitle, pImgUrl, pPrice, pDescription} = req.body;
+    //The above is required for the neater model construction below.
+    const newProduct = new Product(pTitle, pImgUrl, pPrice, pDescription);
     newProduct.save();
     res.redirect('/');
     };
+
+exports.getProducts = (req, res, next) => {
+  Product.listProducts(productsList => 
+    {
+      res.render('shop/home', { 
+        prods: productsList, 
+        pageTitle: 'Shop',
+        path: '/'
+      });
+  });
+};
