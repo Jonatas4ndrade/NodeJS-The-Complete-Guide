@@ -22,7 +22,7 @@ exports.addProductPost = (req, res, next) => {
 exports.getProducts = (req, res, next) => {
   Product.listProducts(productsList => 
     {
-      res.render('shop/home', { 
+      res.render('admin/products', { 
         prods: productsList, 
         pageTitle: 'Admin Products',
         path: '/admin/products'
