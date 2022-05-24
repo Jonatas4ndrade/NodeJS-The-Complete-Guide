@@ -18,11 +18,11 @@ const readProductsFromFile = (cb) => {
 };
 
 module.exports = class Product {
-    constructor(title, imgUrl, description, price) {
+    constructor(title, imgUrl, price, description) {
         this.title = title;
         this.imgUrl = imgUrl;
-        this.description =  description;
         this.price = price;
+        this.description =  description;
         }
 
     save() {
@@ -30,7 +30,7 @@ module.exports = class Product {
         //TO-DO: Change this logic to 'append'.
         readProductsFromFile(products => {
             products.push(this)
-            // TO-DO: error handling.
+            // TO-DO: error handling if empty or non JSON compliant "products.JSON" exists
             fs.writeFile(path, JSON.stringify(products), (err) => console.log(err))
         });
     }

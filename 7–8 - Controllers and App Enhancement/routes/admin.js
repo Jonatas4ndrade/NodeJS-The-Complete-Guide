@@ -1,11 +1,11 @@
 const express = require('express');
 
-const adminController = require('../controllers/shop');
+const adminController = require('../controllers/admin');
 
 const router = express.Router();
 
 // /admin/products => GET
-router.get('/add-product', adminController.getProducts);
+router.get('/products', adminController.getProducts);
 
 // /admin/add-product => GET
 router.get('/add-product', adminController.addProductGet);

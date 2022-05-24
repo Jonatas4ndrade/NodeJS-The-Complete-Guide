@@ -11,7 +11,10 @@ exports.addProductGet = (req, res, next) => {
   };
 
 exports.addProductPost = (req, res, next) => {
-  const newProduct = new Product(req.body.title);
+  const {title, imgUrl, price, description} = req.body;
+  //The above is used for the neat model construction below.
+  const newProduct = new Product(title, imgUrl, price, description);
+  console.log(newProduct);
   newProduct.save();
   res.redirect('/');
   };
@@ -49,7 +52,6 @@ exports.cartGet = (req, res, next) => {
     });
   };
   
-
 exports.checkoutGet = (req, res, next) => {
     Product.listProducts(productsList => 
       {

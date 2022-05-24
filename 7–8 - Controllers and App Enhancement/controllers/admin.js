@@ -11,10 +11,10 @@ exports.addProductGet = (req, res, next) => {
   };
 
 exports.addProductPost = (req, res, next) => {
-    
-    const {pTitle, pImgUrl, pPrice, pDescription} = req.body;
-    //The above is required for the neater model construction below.
-    const newProduct = new Product(pTitle, pImgUrl, pPrice, pDescription);
+    const {title, imgUrl, price, description} = req.body;
+    //The above is used for the neat model construction below.
+    const newProduct = new Product(title, imgUrl, price, description);
+    console.log(newProduct);
     newProduct.save();
     res.redirect('/');
     };
@@ -24,8 +24,8 @@ exports.getProducts = (req, res, next) => {
     {
       res.render('shop/home', { 
         prods: productsList, 
-        pageTitle: 'Shop',
-        path: '/'
+        pageTitle: 'Admin Products',
+        path: '/admin/products'
       });
   });
 };
