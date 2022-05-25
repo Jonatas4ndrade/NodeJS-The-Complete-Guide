@@ -4,11 +4,11 @@ const Product = require('../models/product');
 // Check 'main-layout.pug' for more details.
  
 exports.addProductGet = (req, res, next) => {
-    res.render('shop/product-list',
-    { pageTitle: 'My Products', 
-      path: '/products',
-      });
-  };
+  res.render('shop/product-list',
+  { pageTitle: 'My Products', 
+    path: '/products',
+    });
+};
 
 exports.addProductPost = (req, res, next) => {
   const {title, imgUrl, price, description} = req.body;
@@ -17,48 +17,59 @@ exports.addProductPost = (req, res, next) => {
   console.log(newProduct);
   newProduct.save();
   res.redirect('/');
-  };
+};
 
 exports.homeGet = (req, res, next) => {
-    Product.listProducts(productsList => 
-      {
-        res.render('shop/home', { 
-           prods: productsList, 
-           pageTitle: 'Home',
-           path: '/'
-          });
-    });
-  };
+  Product.listProducts(productsList => 
+    {
+      res.render('shop/home', { 
+          prods: productsList, 
+          pageTitle: 'Home',
+          path: '/'
+        });
+  });
+};
 
-  exports.getProducts = (req, res, next) => {
-    Product.listProducts(productsList => 
-      {
-        res.render('shop/product-list', { 
-           prods: productsList, 
-           pageTitle: 'Shop',
-           path: '/products'
-          });
-    });
-  };
+exports.getProducts = (req, res, next) => {
+  Product.listProducts(productsList => 
+    {
+      res.render('shop/product-list', { 
+          prods: productsList, 
+          pageTitle: 'Shop',
+          path: '/products'
+        });
+  });
+};
 
 exports.cartGet = (req, res, next) => {
-    Product.listProducts(productsList => 
-      {
-        res.render('shop/cart', { 
-           prods: productsList, 
-           pageTitle: 'My Cart',
-           path: '/cart'
-          });
-    });
-  };
+  Product.listProducts(productsList => 
+    {
+      res.render('shop/cart', { 
+          prods: productsList, 
+          pageTitle: 'My Cart',
+          path: '/cart'
+        });
+  });
+};
   
 exports.checkoutGet = (req, res, next) => {
-    Product.listProducts(productsList => 
-      {
-        res.render('shop/checkout', { 
-           prods: productsList, 
-           pageTitle: 'Checkout',
-           path: '/checkout'
-          });
-    });
-  };
+  Product.listProducts(productsList => 
+    {
+      res.render('shop/checkout', { 
+          prods: productsList, 
+          pageTitle: 'Checkout',
+          path: '/checkout'
+        });
+  });
+};
+
+exports.ordersGet = (req, res, next) => {
+  Product.listProducts(productsList => 
+    {
+      res.render('shop/orders', { 
+          prods: productsList, 
+          pageTitle: 'My Orders',
+          path: '/orders'
+        });
+  });
+};
